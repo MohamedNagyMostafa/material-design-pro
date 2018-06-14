@@ -166,7 +166,7 @@ public class ArticleDetailFragment extends Fragment implements
             return;
         }
 
-        TextView titleView = (TextView) mRootView.findViewById(R.id.article_title);
+        Toolbar titleView = mRootView.findViewById(R.id.toolbar);
         TextView bylineView = (TextView) mRootView.findViewById(R.id.article_byline);
         bylineView.setMovementMethod(new LinkMovementMethod());
         TextView bodyView = (TextView) mRootView.findViewById(R.id.article_body);
@@ -179,7 +179,7 @@ public class ArticleDetailFragment extends Fragment implements
             mRootView.setVisibility(View.VISIBLE);
             mRootView.animate().alpha(1);
 
-            titleView.setText(mCursor.getString(ArticleLoader.Query.TITLE));
+            titleView.setTitle(mCursor.getString(ArticleLoader.Query.TITLE));
 
             Date publishedDate = parsePublishedDate();
             if (!publishedDate.before(START_OF_EPOCH.getTime())) {
@@ -222,7 +222,7 @@ public class ArticleDetailFragment extends Fragment implements
                     });
         } else {
             mRootView.setVisibility(View.GONE);
-            titleView.setText("N/A");
+            titleView.setTitle("N/A");
             bylineView.setText("N/A" );
             bodyView.setText("N/A");
         }
