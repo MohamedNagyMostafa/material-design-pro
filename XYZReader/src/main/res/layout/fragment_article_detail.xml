@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="218dp"
         android:background="@color/colorPrimary"
+        android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.Light"
         >
 
@@ -96,7 +97,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/ic_share"
-
+        android:elevation="6dp"
+        
         app:fabSize="normal"
         app:pressedTranslationZ="@dimen/fab_press_translation_z"
 
